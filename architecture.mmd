@@ -1,0 +1,20 @@
+graph TD
+    subgraph Frontend
+        A[Streamlit UI]
+    end
+    subgraph Backend
+        B[FastAPI App]
+        C[Auth Module (JWT)]
+        D[User Management Endpoints]
+        E[Help Request Endpoints]
+        F[SQLAlchemy ORM]
+    end
+    subgraph Database
+        G[(SQLite DB)]
+    end
+    A -- HTTP/REST --> B
+    B -- Auth/Token --> C
+    B -- User CRUD --> D
+    B -- Help CRUD --> E
+    B -- ORM --> F
+    F -- SQL --> G

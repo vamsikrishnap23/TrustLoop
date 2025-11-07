@@ -1,0 +1,276 @@
+% Final submission-ready LaTeX for Overleaf
+% File: submission_report.tex
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{parskip}
+\geometry{margin=1in}
+	itle{TrustLoop: Final Project Report}
+\author{Your Name \\ Department / Course}
+\date{\today}
+
+% Overleaf instructions:
+% - Upload your screenshots and diagrams to the same Overleaf project folder.
+% - Keep the filenames used below or update the \includegraphics paths.
+% - Compile with the default Overleaf engine (latexmk) — no local install required.
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{TrustLoop}
+\rhead{Final Report}
+\cfoot{\thepage}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE TrustLoop \par}
+    \vspace{1.5cm}
+    {\Large Final Project Report \par}
+    \vspace{1.5cm}
+    {\large Prepared by: Your Name \\\today \par}
+    \vfill
+    {\small Submitted for: Course / Module Name}\
+\end{titlepage}
+
+\begin{abstract}
+This document is the final submission pack for the TrustLoop project. It includes evidence of testing and builds, screenshots of implemented features, a full project report (problem statement, user stories, architecture and design), the testing design, and an appendix with diagrams and links. Replace placeholder images with your actual screenshots before finalizing.
+\end{abstract}
+	ableofcontents
+\clearpage
+
+% -----------------------------------------------------------------------------
+% A. Submission Pack (Screenshots and Evidence)
+% -----------------------------------------------------------------------------
+\section{A. Submission Pack}
+\subsection{A.1 Integration / Regression / Mutation Testing (screenshots)}
+	extbf{Description:} Screenshots showing test runs, CI output or local test reports. Include integration tests that exercise multiple modules, regression tests verifying bug fixes, and mutation testing screenshots (if available).
+
+% Placeholder images - replace with your uploaded screenshots
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{integration_tests.png}
+    \caption{Integration test run / test report (placeholder). Replace with your screenshot.}
+    \label{fig:integration-tests}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{regression_tests.png}
+    \caption{Regression test run / CI pipeline showing regression tests (placeholder).}
+    \label{fig:regression-tests}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{mutation_tests.png}
+    \caption{Mutation testing report / summary (placeholder).}
+    \label{fig:mutation-tests}
+\end{figure}
+
+\clearpage
+\subsection{A.2 Version Management and System Building (screenshots)}
+	extbf{Description:} Provide screenshots of your Git repository (commit history, branches), CI/CD build logs (e.g., GitHub Actions, GitLab CI, Azure Pipelines), and any build artifacts.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{git_history.png}
+    \caption{Version control history / commit log (placeholder).}
+    \label{fig:git-history}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{ci_build_log.png}
+    \caption{CI build or pipeline output (placeholder).}
+    \label{fig:ci-build}
+\end{figure}
+
+\clearpage
+\subsection{A.3 Screenshots of Developed Functionalities}
+	extbf{Description:} Screenshots demonstrating the implemented features: registration, login, dashboard, creating/viewing help requests, user profile and user management.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{Screenshot 2025-09-30 175704.png}
+    \caption{User registration / login (placeholder).}
+    \label{fig:ui-register}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{localhost_8501_ (1).png}
+    \caption{Dashboard and statistics (placeholder).}
+    \label{fig:ui-dashboard}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{localhost_8501_ (2).png}
+    \caption{User management view (placeholder).}
+    \label{fig:ui-user-management}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{localhost_8501_ (4).png}
+    \caption{"Help Someone" workflow (placeholder).}
+    \label{fig:ui-help-someone}
+\end{figure}
+
+\clearpage
+\subsection{A.4 Tools / Technologies Used (evidence)}
+	extbf{Description:} Screenshots or short outputs confirming installed tools and versions (e.g., Python -V, pip freeze, Git version, Streamlit UI snapshot, FastAPI docs page).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{tools_versions.png}
+    \caption{Installed tools and versions snapshot (placeholder).}
+    \label{fig:tools}
+\end{figure}
+
+\clearpage
+
+% -----------------------------------------------------------------------------
+% C. Project Report Submission
+% -----------------------------------------------------------------------------
+\section{C. Project Report}
+
+\subsection{C.1 Problem Statement}
+	extbf{Problem Statement:}
+
+TrustLoop is a lightweight community help coordination platform that allows users to request help and offer assistance. The primary problem is the lack of a simple, privacy-conscious platform to match requests for short-term help (errands, consultations, local assistance) with capable volunteers while preserving trust and accountability. The system addresses authentication, request lifecycle management, and simple analytics for administrators and users.
+
+\subsection{C.2 User Stories}
+\begin{itemize}[leftmargin=*, label=--]
+    \item As a new user, I want to register with email and password so I can request help.
+    \item As a registered user, I want to log in and see my active requests and history.
+    \item As a user, I want to create a help request with a title, description and location so others can assist.
+    \item As a helper, I want to view available requests and mark that I will help someone.
+    \item As an admin, I want to view and manage (update/delete) users and requests to keep the platform healthy.
+    \item As a data-savvy user, I want to see simple statistics about requests and offers to measure community engagement.
+\end{itemize}
+
+\subsection{C.3 System Architecture and System Design}
+\textbf{High-level Architecture:}
+
+The system follows a 3-tier architecture: Streamlit frontend (UI) communicates via REST with a FastAPI backend which uses SQLAlchemy to persist data in a SQLite database. Authentication is handled with JWTs. Responsibilities are separated into modules: `auth.py` (security), `database.py` (DB session), `models.py` (ORM), `schemas.py` (Pydantic validation), and `main.py` (FastAPI endpoints).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{arch2.png}
+    \caption{System architecture diagram (placeholder).}
+    \label{fig:system-arch}
+\end{figure}
+
+\textbf{Component list:}
+\begin{itemize}[leftmargin=*, label=--]
+    \item Frontend: `trustloop_streamlit.py` (Streamlit UI)
+    \item Backend: `app/main.py` (FastAPI), `app/auth.py`, `app/schemas.py`, `app/database.py`
+    \item Persistence: `app/models.py`, `trustloop.db` (SQLite)
+\end{itemize}
+
+\subsection{C.4 Design of Tests}
+\textbf{Testing strategy:}
+
+\begin{itemize}[leftmargin=*, label=--]
+    \item Unit tests: Focus on individual functions and small components (e.g., password hashing, token creation, schema validation). Use Pytest. Include edge cases (invalid input, missing fields).
+    \item Integration tests: Exercise multiple components together (e.g., register -> login -> create request -> query requests). These tests run the FastAPI app and use a test client or run against a test database.
+    \item Regression tests: Capture failing scenarios found during development as tests to prevent re-introduction of bugs.
+    \item Mutation testing: Optionally run a mutation testing tool (e.g., MutPy, cosmic-ray) to assess test suite strength; include reports/screenshots in section A.
+    \item Test data: Use fixtures (see `tests/conftest.py`) to seed test DB with predictable data.
+\end{itemize}
+
+\textbf{Example test matrix (suggested):}
+\begin{itemize}[leftmargin=*, label=--]
+    \item Auth: register, login, invalid credentials, expired/invalid token
+    \item Requests: create, read, update, delete, list filtered by user
+    \item Roles: admin-only endpoints (delete user) verified by role-based checks
+    \item Frontend smoke tests: Streamlit pages render without server error and show expected UI elements (manually captured screenshots)
+\end{itemize}
+
+\subsection{C.5 Appendix}
+\subsubsection{C.5.a Software Requirements Specification (SRS)}
+% Provide a brief SRS placeholder; you can paste a longer SRS as a separate PDF or include it inline.
+\textbf{SRS (summary):}
+\begin{itemize}[leftmargin=*, label=--]
+    \item Functional: user registration/login, create/manage help requests, offer to help, admin management
+    \item Non-functional: simple authentication, light-weight SQLite persistence, responsive Streamlit UI, maintainable code
+    \item Constraints: single-node deployment, local SQLite storage for prototype
+\end{itemize}
+
+\vspace{6pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{srs_placeholder.png}
+    \caption{SRS excerpt or uploaded SRS document screenshot / page (placeholder).}
+\end{figure}
+
+\subsubsection{C.5.b Data Flow Diagram (DFD)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{dfd.png}
+    \caption{Data Flow Diagram (placeholder).}
+\end{figure}
+
+\subsubsection{C.5.c Entity-Relationship Diagram (ERD)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{erd.png}
+    \caption{ERD showing User and HelpRequest tables (placeholder).}
+\end{figure}
+
+\subsubsection{C.5.d UML Diagrams}
+\textbf{Placeholders:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{uml_component.png}
+    \caption{Component diagram (placeholder).}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{uml_sequence.png}
+    \caption{Sequence diagram showing a user creating a help request (placeholder).}
+\end{figure}
+
+\subsubsection{C.5.e Code listing / GitHub link}
+	extbf{Code listing:}
+
+For full source code, tests and CI config, see the project repository (replace with your repo link):
+
+\begin{itemize}[leftmargin=*, label=--]
+    \item GitHub: \url{https://github.com/your-username/TrustLoop}
+    \item Key files included: `app/main.py`, `app/models.py`, `app/schemas.py`, `app/auth.py`, `trustloop_streamlit.py`, `tests/`.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{code_listing.png}
+    \caption{Screenshot of key code files or GitHub repo (placeholder).}
+\end{figure}
+
+\clearpage
+
+\section*{Tools and Technologies (summary)}
+\begin{itemize}[leftmargin=*, label=--]
+    \item Python 3.x, FastAPI, Uvicorn
+    \item SQLAlchemy, SQLite
+    \item Pydantic, Passlib, python-jose
+    \item Streamlit, Plotly, Pandas
+    \item Pytest (testing), optional mutation testing tools
+    \item Git, GitHub (or your preferred VCS), optional CI (GitHub Actions)
+\end{itemize}
+
+\vfill
+\begin{center}
+\textit{Prepared by: Your Name \\ Date: \today}
+\end{center}
+
+\end{document}

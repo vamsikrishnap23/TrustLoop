@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=1in}
+\title{TrustLoop Project Submission}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Architectural Prototype}
+\textbf{Description:} The TrustLoop system is built using a modular architecture. The backend is powered by FastAPI (Python), using SQLAlchemy ORM and SQLite for data storage. Authentication is handled via JWT tokens. The frontend is implemented in Streamlit for rapid prototyping and interactive dashboards.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{arch2.png}
+    \caption{Architecture diagram}
+    \label{fig:architecture}
+\end{figure}
+\newpage
+
+\section*{2. User Interface Prototype}
+\textbf{Description:} The UI is designed with a modern, clean look using Streamlit's light theme with blue accents. It features navigation for Dashboard, Help Requests, User Management, and more.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{localhost_8501_ (5).png}
+    \caption{User interface prototype}
+    \label{fig:ui}
+\end{figure}
+\newpage
+
+\section*{3. Screenshots of Developed Functionalities}
+\begin{itemize}[leftmargin=*, label=--]
+  \item User registration and login
+  \item Creating and viewing help requests
+  \item User profile with statistics and charts
+  \item User management (admin: view, update, delete users)
+  \item Offering help to others ("Help Someone" feature)
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{Screenshot 2025-09-30 175704.png}
+    
+    
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{Screenshot .png}
+    
+    
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{localhost_8501_ (1).png}
+    
+    
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{localhost_8501_ (2).png}
+    
+    
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{localhost_8501_ (4).png}
+    
+    
+\end{figure}
+
+
+
+
+
+\newpage
+
+\section*{4. Tools/Technologies Used}
+\begin{itemize}[leftmargin=*, label=--]
+  \item \textbf{Backend:} Python, FastAPI, SQLAlchemy, SQLite, JWT
+  \item \textbf{Frontend:} Streamlit, Plotly, Pandas
+  \item \textbf{Other:} Uvicorn (ASGI server), Pydantic, Passlib, Python-Jose
+  \item \textbf{Testing:} Pytest
+\end{itemize}
+
+\section*{5. SOLID Principles Application}
+\textbf{Description:} The codebase applies SOLID principles as follows:
+\begin{itemize}[leftmargin=*, label=--]
+  \item \textbf{Single Responsibility:} Each module (models, schemas, auth, database, main) has a clear, single purpose.
+  \item \textbf{Open/Closed:} New features (e.g., user management, help requests) are added via new endpoints and UI sections without modifying core logic.
+  \item \textbf{Liskov Substitution:} Pydantic models and FastAPI dependency injection allow for extensible, substitutable components.
+  \item \textbf{Interface Segregation:} Separate schemas for requests and responses, and clear API boundaries.
+  \item \textbf{Dependency Inversion:} FastAPI's dependency injection (\texttt{Depends}) is used throughout for database and authentication.
+\end{itemize}
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Screenshot 2025-09-30 183642.png}
+    \label{fig:placeholder}
+
+    \centering
+    \includegraphics[width=1\linewidth]{Screenshot 2025-09-30 183720.png}
+\end{figure}
+
+
+\begin{center}
+\textit{Prepared by: Your Name \\ Date: \today}
+\end{center}
+
+\end{document}
